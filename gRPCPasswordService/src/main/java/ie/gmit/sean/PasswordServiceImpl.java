@@ -1,3 +1,5 @@
+package ie.gmit.sean;
+
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.ByteString;
 import ie.sean.password.PasswordService;
@@ -10,7 +12,7 @@ public class PasswordServiceImpl extends passwordServiceImplBase {
       Extend the passwordServiceImplBase
     -------------------------------------
     Override the hash and validate methods then
-    Implement the Passwords.java class to
+    Implement the ie.gmit.sean.Passwords.java class to
     hash and compare client passwords
     */
 

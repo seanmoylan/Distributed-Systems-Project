@@ -1,3 +1,4 @@
+import ie.gmit.sean.Passwords;
 import ie.sean.password.PasswordService;
 import ie.sean.password.passwordServiceGrpc;
 import io.grpc.ManagedChannel;
