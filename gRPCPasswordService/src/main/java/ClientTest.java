@@ -1,11 +1,17 @@
+import com.google.protobuf.BoolValue;
+import com.google.protobuf.ByteString;
 import ie.gmit.sean.Passwords;
 import ie.sean.password.PasswordService;
 import ie.sean.password.passwordServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
 
 public class ClientTest {
     private final ManagedChannel channel;
+    private String password;
+    private ByteString hashedPassword;
+    private Passwords ps;
     private final passwordServiceGrpc.passwordServiceStub asyncPasswordService;
     private final passwordServiceGrpc.passwordServiceBlockingStub syncPasswordService;
 
@@ -19,14 +25,17 @@ public class ClientTest {
 
         hashPassword();
 
+        validatePassword();
+
     }
 
     public static void main(String[] args){
         ClientTest testClient = new ClientTest("localHost", 8899);
+
     }
 
     public void hashPassword(){
-        String password = Passwords.generateRandomPassword(5);
+        password = Passwords.generateRandomPassword(15);
 
 
         PasswordService.Credentials credentials = PasswordService.Credentials.newBuilder()
@@ -34,15 +43,38 @@ public class ClientTest {
                 .setPassword(password)
                 .build();
 
-        byte[] hashedPassword = syncPasswordService.hash(credentials).getHashedPassword().toByteArray();
+        hashedPassword = syncPasswordService.hash(credentials).getHashedPassword();
+
         System.out.println("The password you sent is: "+password+" The hashed value is: "+hashedPassword);
+
     }
 
-    public void hasResponse(){
+    public void hashResponse(){
+
 
     }
 
     public void validatePassword(){
 
+        PasswordService.Compare com = PasswordService.Compare.newBuilder().setHashedPassword(hashedPassword)
+                .setPassword(password).setSalt( Passwords.getNextSalt()).build();
+
+        System.out.println("In the method");
+       asyncPasswordService.validate(com, new StreamObserver<BoolValue>() {
+           @Override
+           public void onNext(BoolValue boolValue) {
+               System.out.println("Do passwords match: ");
+           }
+
+           @Override
+           public void onError(Throwable throwable) {
+
+           }
+
+           @Override
+           public void onCompleted() {
+
+           }
+       });
     }
 }
