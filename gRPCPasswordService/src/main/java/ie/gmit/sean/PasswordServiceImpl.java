@@ -19,6 +19,7 @@ public class PasswordServiceImpl extends passwordServiceImplBase {
     @Override
     public void hash(PasswordService.Credentials request, StreamObserver<PasswordService.HashResponse> responseObserver) {
 
+        System.out.println("== Hash method called ==");
         // Get id value from clients request
         int id = request.getId();
 
@@ -41,6 +42,7 @@ public class PasswordServiceImpl extends passwordServiceImplBase {
     @Override
     public void validate(PasswordService.Compare request, StreamObserver<BoolValue> responseObserver) {
 
+        System.out.println("== Validate method called ==");
         // get the password from client request
         String password = request.getPassword();
 
@@ -49,6 +51,7 @@ public class PasswordServiceImpl extends passwordServiceImplBase {
         byte[] hashedPassword = request.getHashedPassword().toByteArray();
 
         boolean isPasswordSame = Passwords.isExpectedPassword(password.toCharArray(), salt, hashedPassword);
+        System.out.println("Passwords match = "+isPasswordSame);
 
         responseObserver.onNext(BoolValue.of(isPasswordSame));
         responseObserver.onCompleted();

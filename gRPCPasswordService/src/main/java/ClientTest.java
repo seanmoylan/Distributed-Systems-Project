@@ -1,5 +1,6 @@
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.ByteString;
+import ie.gmit.sean.PasswordServiceImpl;
 import ie.gmit.sean.Passwords;
 import ie.sean.password.PasswordService;
 import ie.sean.password.passwordServiceGrpc;
@@ -11,6 +12,8 @@ public class ClientTest {
     private final ManagedChannel channel;
     private String password;
     private ByteString hashedPassword;
+    private PasswordService.HashResponse hashResponse;
+    private PasswordService.Compare compare;
     private Passwords ps;
     private final passwordServiceGrpc.passwordServiceStub asyncPasswordService;
     private final passwordServiceGrpc.passwordServiceBlockingStub syncPasswordService;
@@ -22,6 +25,8 @@ public class ClientTest {
                 .build();
         asyncPasswordService = passwordServiceGrpc.newStub(channel);
         syncPasswordService = passwordServiceGrpc.newBlockingStub(channel);
+
+
 
         hashPassword();
 
@@ -43,38 +48,28 @@ public class ClientTest {
                 .setPassword(password)
                 .build();
 
-        hashedPassword = syncPasswordService.hash(credentials).getHashedPassword();
 
-        System.out.println("The password you sent is: "+password+" The hashed value is: "+hashedPassword);
+        hashResponse = syncPasswordService.hash(credentials);
 
-    }
+        System.out.println("The password you sent is: "+password+" The hashed value is: "+hashResponse);
 
-    public void hashResponse(){
-
+        hashedPassword = hashResponse.getHashedPassword();
 
     }
+
 
     public void validatePassword(){
 
-        PasswordService.Compare com = PasswordService.Compare.newBuilder().setHashedPassword(hashedPassword)
-                .setPassword(password).setSalt( Passwords.getNextSalt()).build();
+        compare = PasswordService.Compare.newBuilder()
+                .setHashedPassword(hashResponse.getHashedPassword())
+                .setPassword(password)
+                .setSalt(hashResponse.getSalt())
+                .build();
 
-        System.out.println("In the method");
-       asyncPasswordService.validate(com, new StreamObserver<BoolValue>() {
-           @Override
-           public void onNext(BoolValue boolValue) {
-               System.out.println("Do passwords match: ");
-           }
+        BoolValue isTrue = syncPasswordService.validate(compare);
+        //passwordServiceGrpc
 
-           @Override
-           public void onError(Throwable throwable) {
+        System.out.println("Validate returned: "+isTrue);
 
-           }
-
-           @Override
-           public void onCompleted() {
-
-           }
-       });
     }
 }
