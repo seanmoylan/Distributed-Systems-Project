@@ -14,7 +14,6 @@ public class ClientTest {
     private ByteString hashedPassword;
     private PasswordService.HashResponse hashResponse;
     private PasswordService.Compare compare;
-    private Passwords ps;
     private final passwordServiceGrpc.passwordServiceStub asyncPasswordService;
     private final passwordServiceGrpc.passwordServiceBlockingStub syncPasswordService;
 
