@@ -8,6 +8,8 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
+import javax.ws.rs.POST;
+
 public class ClientTest {
     private final ManagedChannel channel;
     private String password;
@@ -66,7 +68,6 @@ public class ClientTest {
                 .build();
 
         BoolValue isTrue = syncPasswordService.validate(compare);
-        //passwordServiceGrpc
 
         System.out.println("Validate returned: "+isTrue);
 

@@ -22,7 +22,7 @@ public class ServerDemo {
 
     private void start() throws IOException {
         /* The port on which the server should run */
-        int port = 8899;
+        int port = 8080;
         server = ServerBuilder.forPort(port)
                 .addService(new PasswordServiceImpl())
                 .build()

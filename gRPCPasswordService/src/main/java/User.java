@@ -1,16 +1,39 @@
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 public class User {
-
+    @NotNull
     int user_id;
+    @NotBlank @Length(min = 2, max = 15)
     String user_name;
+    @Pattern(regexp=".+@.+\\.[a-z]+")
     String email;
+    @NotBlank @Length(min = 2, max = 15)
     String password;
+    @NotBlank @Length(min = 2, max = 15)
     String hashed_password;
+    @NotBlank @Length(min = 2, max = 15)
     String salt;
+
+    public User(){
+
+    }
+
+    public User(int user_id, String user_name, String email, String password, String hashed_password, String salt){
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.email = email;
+        this.password = password;
+        this.hashed_password = hashed_password;
+        this.salt = salt;
+    }
 
     public int getUser_id() {
         return user_id;
@@ -60,6 +83,9 @@ public class User {
         this.salt = salt;
     }
 
-
-
+    public String toString(){
+        return "User [id = "+ user_id+", user_name = "+user_name+
+                ", email = "+email+", password = "+password+
+                ", hashed_password = "+ hashed_password+", salt = "+salt;
+    }
 }
