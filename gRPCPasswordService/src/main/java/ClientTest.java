@@ -36,7 +36,7 @@ public class ClientTest {
     }
 
     public static void main(String[] args){
-        ClientTest testClient = new ClientTest("localHost", 8899);
+        ClientTest testClient = new ClientTest("localHost", 8080);
 
     }
 
