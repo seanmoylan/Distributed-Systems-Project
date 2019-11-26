@@ -1,7 +1,7 @@
 # Distributed Systems Project
 Sean Moylan - G00299424
 
-As part of 4th Year Distributed Systems module I was asked to build a gRPC password service (Part 1) and an API Client that can create user accounts and user the password service to hash the user passwords and compare hashes
+As part of 4th Year Distributed Systems module I was asked to build a gRPC password service (Part 1) and an API Client (Part 2) that can create user accounts and user the password service to hash the user passwords and compare hashes
 
 ## Work Environment
 - macOS Catalina
