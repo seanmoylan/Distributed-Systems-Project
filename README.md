@@ -6,8 +6,8 @@ As part of 4th Year Distributed Systems module I was asked to build a gRPC passw
 ## Work Environment
 - macOS Catalina
 - Intellij IDEA
-- [Swagger]{https://swagger.io}
-- [Postman]{https://www.getpostman.com}
+- [Swagger](https://swagger.io)
+- [Postman](https://www.getpostman.com)
 
 To run the PasswordService jar file, navigate to the directory `/Target` in the project folder
 - run java -jar PasswordService.jar
@@ -15,10 +15,10 @@ To run the PasswordService jar file, navigate to the directory `/Target` in the 
 - Server is now ready for client requests
 
 ## Part 1 References 
-*https://grpc.io/
-*https://www.youtube.com/watch?v=2hjIn3kKXuo
+* https://grpc.io/
+* https://www.youtube.com/watch?v=2hjIn3kKXuo
 
 ## Part 2 References
-*https://www.youtube.com/watch?v=HHyjWc0ASl8
-*https://swagger.io
-*https://howtodoinjava.com/dropwizard/tutorial-and-hello-world-example/
+* https://www.youtube.com/watch?v=HHyjWc0ASl8
+* https://swagger.io
+* https://howtodoinjava.com/dropwizard/tutorial-and-hello-world-example/
