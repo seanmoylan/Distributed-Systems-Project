@@ -1,5 +1,6 @@
 package ie.gmit.sean;
 
+import com.google.protobuf.Message;
 import ie.gmit.sean.api.User;
 import ie.gmit.sean.api.UserLogin;
 import ie.gmit.sean.client.Client;
@@ -53,7 +54,7 @@ public class UsersRESTController {
         if(user != null){
             return Response.ok(user).build();
         }else{
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("No User with id: "+id).build();
         }
 
     }

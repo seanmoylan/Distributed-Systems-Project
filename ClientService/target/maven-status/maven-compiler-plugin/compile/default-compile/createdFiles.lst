@@ -18,6 +18,7 @@ ie/sean/password/PasswordServiceOuterClass$Credentials$Builder.class
 ie/sean/password/PasswordServiceGrpc$PasswordServiceFileDescriptorSupplier.class
 ie/sean/password/PasswordServiceOuterClass$CompareOrBuilder.class
 ie/sean/password/PasswordServiceOuterClass$HashResponse$1.class
+ie/gmit/sean/healthcheck/AppHealthCheck.class
 ie/sean/password/PasswordServiceOuterClass.class
 ie/sean/password/PasswordServiceGrpc$PasswordServiceImplBase.class
 ie/sean/password/PasswordServiceOuterClass$Compare$1.class
