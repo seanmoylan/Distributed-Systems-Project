@@ -5,14 +5,46 @@ As part of 4th Year Distributed Systems module I was asked to build a gRPC passw
 
 ## Work Environment
 - macOS Catalina
-- Intellij IDEA
+- [Intellij IDEA](https://www.jetbrains.com/idea/)
 - [Swagger](https://swagger.io)
 - [Postman](https://www.getpostman.com)
 
-To run the PasswordService jar file, navigate to the directory `/Target` in the project folder
-- run java -jar PasswordService.jar
-- After that is run it should say server running on port 8080
+
+## Step 1
+To run the PasswordService jar file
+- Open Terminal
+- navigate to the directory `/Target` in the project folder
+- run `java -jar PasswordService.jar`
+- After that is run it should say server running on port 9999
 - Server is now ready for client requests
+
+## Step 2
+Once you have the PasswordService running, you then need to start up the Client
+- Open Terminal
+- navigate to the directory `/Target` in the project folder
+- run `java -jar target/ClientService-1.0-SNAPSHOT.jar server configuration.yml`
+- By default the application will run on `port:8080` and admin will run on `port:8081`
+- Server is now ready for client requests
+
+## Step 3
+If you dont have postman downloaded then click [here](https://www.getpostman.com) to download
+- `GET`: All users = `http://localhost:8080/users/`
+- `GET`: UserById = `http://localhost:8080/users/{enter id here}`
+- `DELETE`: Delete UserById = `http://localhost:8080/users/{enter id here}`
+- `POST`: Create a User = `http://localhost:8080/users/`
+- `PUT`: Update UserById = `http://localhost:8080/users/{enter id here}`
++ Add request body in json for CREATE and UPDATE requests in the following format:
+```json
+{
+         "user_id": 1,
+        "user_name": "",
+        "email": "",
+        "password": ""
+}
+```
+
+
+
 
 ## Part 1 References 
 * https://grpc.io/
