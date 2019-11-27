@@ -1,7 +1,7 @@
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.ByteString;
 import ie.gmit.sean.PasswordServiceImpl;
-import ie.gmit.sean.Passwords;
+
 import ie.sean.password.PasswordService;
 import ie.sean.password.passwordServiceGrpc;
 import io.grpc.ManagedChannel;
@@ -12,7 +12,7 @@ import javax.ws.rs.POST;
 
 public class ClientTest {
     private final ManagedChannel channel;
-    private String password;
+    private String password = "1234";
     private ByteString hashedPassword;
     private PasswordService.HashResponse hashResponse;
     private PasswordService.Compare compare;
@@ -36,12 +36,12 @@ public class ClientTest {
     }
 
     public static void main(String[] args){
-        ClientTest testClient = new ClientTest("localHost", 8080);
+        ClientTest testClient = new ClientTest("localHost", 9999);
 
     }
 
     public void hashPassword(){
-        password = Passwords.generateRandomPassword(15);
+
 
 
         PasswordService.Credentials credentials = PasswordService.Credentials.newBuilder()

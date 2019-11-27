@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gRPCClient.iml" filepath="$PROJECT_DIR$/gRPCClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gRPCPasswordService.iml" filepath="$PROJECT_DIR$/gRPCPasswordService.iml" />
     </modules>
   </component>
 </project>

@@ -53,7 +53,9 @@ public class PasswordServiceImpl extends passwordServiceImplBase {
         boolean isPasswordSame = Passwords.isExpectedPassword(password.toCharArray(), salt, hashedPassword);
         System.out.println("Passwords match = "+isPasswordSame);
 
-        responseObserver.onNext(BoolValue.of(isPasswordSame));
+        BoolValue response = BoolValue.newBuilder().setValue(isPasswordSame).build();
+
+        responseObserver.onNext(response);
         responseObserver.onCompleted();
 
     }

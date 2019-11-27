@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gRPCClient" />
+        <module name="ClientService" />
         <module name="gRPCPasswordService" />
+        <module name="gRPCClient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gRPCClient" target="1.8" />
+      <module name="gRPCPasswordService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
