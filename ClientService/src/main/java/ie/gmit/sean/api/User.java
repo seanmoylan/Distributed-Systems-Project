@@ -7,18 +7,22 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.xml.bind.annotation.XmlElement;
 
 public class User {
     @NotNull
-    int user_id;
+    private int user_id;
     @NotBlank @Length(min = 2, max = 15)
-    String user_name;
+    private String user_name;
     @Pattern(regexp=".+@.+\\.[a-z]+")
-    String email;
+    private String email;
     @NotBlank @Length(min = 2, max = 15)
-    String password;
+    private String password;
 
-    // Imutable
+    /*
+        These variables are only to be accessed by the constructor class
+        when hashing the password. Method can be found in Client.java
+     */
     private ByteString hashed_password;
     private ByteString salt;
 
@@ -42,31 +46,37 @@ public class User {
     }
 
     @JsonProperty
+    @XmlElement
     public int getUser_id() {
         return user_id;
     }
 
+    @XmlElement
     @JsonProperty
     public String getUser_name() {
         return user_name;
     }
 
     @JsonProperty
+    @XmlElement
     public String getEmail() {
         return email;
     }
 
     @JsonProperty
+    @XmlElement
     public String getPassword() {
         return password;
     }
 
     @JsonProperty
+    @XmlElement
     public ByteString getHashed_password() {
         return hashed_password;
     }
 
     @JsonProperty
+    @XmlElement
     public ByteString getSalt() {
         return salt;
     }

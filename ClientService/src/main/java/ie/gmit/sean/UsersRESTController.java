@@ -21,7 +21,7 @@ import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 import static javax.ws.rs.core.Response.Status.NO_CONTENT;
 
 @Path("/users")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public class UsersRESTController {
     //private static  Logger logger = Logger.getLogger(Client.class.getName());
 

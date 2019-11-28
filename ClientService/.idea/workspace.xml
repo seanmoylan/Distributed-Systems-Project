@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1b2f177-1690-4390-912f-8cebd519679e" name="Default Changelist" comment="">
+    <list default="true" id="d1b2f177-1690-4390-912f-8cebd519679e" name="Default Changelist" comment="Added XML response format">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ie/gmit/sean/UsersRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ie/gmit/sean/UsersRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ie/gmit/sean/api/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ie/gmit/sean/api/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ClientService-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ClientService-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ie.gmit.sean.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ie.gmit.sean.AppTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,10 +95,26 @@
       <option name="presentableId" value="Default" />
       <updated>1574783577465</updated>
       <workItem from="1574783582135" duration="18384000" />
+      <workItem from="1574940547753" duration="950000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added XML response format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added XML response format" />
   </component>
 </project>
