@@ -47,9 +47,7 @@ If you dont have postman downloaded then click [here](https://www.getpostman.com
 - LOGIN requests are in the following format:
 ```json
 {
-         "user_id": {Integer},
-        "user_name": "{String}",
-        "email": "{String}",
+        "user_id": {Integer},
         "password": "{String}"
 }
 ```
