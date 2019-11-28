@@ -38,7 +38,7 @@ If you dont have postman downloaded then click [here](https://www.getpostman.com
 - CREATE and UPDATE requests are in the following format:
 ```json
 {
-         "user_id": {`int`},
+         "user_id": {Integer},
         "user_name": "{String}",
         "email": "{String}",
         "password": "{String}"
@@ -47,7 +47,7 @@ If you dont have postman downloaded then click [here](https://www.getpostman.com
 - LOGIN requests are in the following format:
 ```json
 {
-         "user_id": {`int`},
+         "user_id": {Integer},
         "user_name": "{String}",
         "email": "{String}",
         "password": "{String}"
