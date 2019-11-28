@@ -35,19 +35,19 @@ If you dont have postman downloaded then click [here](https://www.getpostman.com
 - `PUT`: Update UserById = `http://localhost:8080/users/{enter id here}`
 - `PUT`: Login User = `http://localhost:8080/login/`
 
-- Add a request body in json for CREATE and UPDATE requests in the following format:
+- CREATE and UPDATE requests are in the following format:
 ```json
 {
-         "user_id": {int},
+         "user_id": {`int`},
         "user_name": "{String}",
         "email": "{String}",
         "password": "{String}"
 }
 ```
-- Add a request body in json for CREATE and UPDATE requests in the following format:
+- LOGIN requests are in the following format:
 ```json
 {
-         "user_id": {int},
+         "user_id": {`int`},
         "user_name": "{String}",
         "email": "{String}",
         "password": "{String}"
