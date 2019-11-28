@@ -33,15 +33,30 @@ If you dont have postman downloaded then click [here](https://www.getpostman.com
 - `DELETE`: Delete UserById = `http://localhost:8080/users/{enter id here}`
 - `POST`: Create a User = `http://localhost:8080/users/`
 - `PUT`: Update UserById = `http://localhost:8080/users/{enter id here}`
-+ Add request body in json for CREATE and UPDATE requests in the following format:
+- `PUT`: Login User = `http://localhost:8080/login/`
+
+- Add a request body in json for CREATE and UPDATE requests in the following format:
 ```json
 {
-         "user_id": 1,
-        "user_name": "",
-        "email": "",
-        "password": ""
+         "user_id": {int},
+        "user_name": "{String}",
+        "email": "{String}",
+        "password": "{String}"
 }
 ```
+- Add a request body in json for CREATE and UPDATE requests in the following format:
+```json
+{
+         "user_id": {int},
+        "user_name": "{String}",
+        "email": "{String}",
+        "password": "{String}"
+}
+```
+
+
+### Health Check
+- `GET`: All users = `http://localhost:8081/healthcheck/`
 
 
 
