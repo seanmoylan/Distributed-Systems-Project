@@ -81,6 +81,14 @@ public class User {
         return salt;
     }
 
+    public void setHashed_password(ByteString hashed_password) {
+        this.hashed_password = hashed_password;
+    }
+
+    public void setSalt(ByteString salt) {
+        this.salt = salt;
+    }
+
     public String toString(){
         return "User{" +
                 "user_id=" + user_id +

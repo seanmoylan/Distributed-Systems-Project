@@ -73,12 +73,12 @@ public class UsersRESTController {
         }
         if (u == null) {
             client.Hash(user);
-            UserDB.createUser(user.getUser_id(), user);
+            //UserDB.createUser(user.getUser_id(), user);
 
             return Response.created(new URI("/users/" + user.getUser_id()))
                     .build();
         } else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("Could not create user with id "+user.getUser_id()+" Id already in use!").build();
 
     }
 
@@ -100,7 +100,7 @@ public class UsersRESTController {
             client.Hash(user);
             return Response.ok(user).build();
         } else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("Could not update user of id "+id+", user not found!").build();
 
     }
 
@@ -114,7 +114,7 @@ public class UsersRESTController {
             UserDB.removeUser(id);
             return Response.ok().build();
         }else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("No user of id "+id+" found!").build();
     }
 
     @POST
@@ -134,11 +134,11 @@ public class UsersRESTController {
             if (client.Validate(userLogin.getPassword(), e.getHashed_password(), e.getSalt())) {
                 return Response.status(Response.Status.OK).build();
             } else {
-                return Response.status(NO_CONTENT).build();
+                return Response.status(NOT_FOUND).entity("Password or ID are Invalid!").build();
             }
 
         } else {
-            return Response.status(NO_CONTENT).build();
+            return Response.status(NO_CONTENT).entity("Password or ID are Invalid!").build();
         }
 
 

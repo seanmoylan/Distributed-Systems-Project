@@ -20,37 +20,37 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.23.0)",
     comments = "Source: passwordService.proto")
-public final class passwordServiceGrpc {
+public final class PasswordServiceGrpc {
 
-  private passwordServiceGrpc() {}
+  private PasswordServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "passwordService";
+  public static final String SERVICE_NAME = "PasswordService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Credentials,
-      ie.sean.password.PasswordService.HashResponse> getHashMethod;
+  private static volatile io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Credentials,
+      ie.sean.password.PasswordServiceOuterClass.HashResponse> getHashMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "hash",
-      requestType = ie.sean.password.PasswordService.Credentials.class,
-      responseType = ie.sean.password.PasswordService.HashResponse.class,
+      requestType = ie.sean.password.PasswordServiceOuterClass.Credentials.class,
+      responseType = ie.sean.password.PasswordServiceOuterClass.HashResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Credentials,
-      ie.sean.password.PasswordService.HashResponse> getHashMethod() {
-    io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Credentials, ie.sean.password.PasswordService.HashResponse> getHashMethod;
-    if ((getHashMethod = passwordServiceGrpc.getHashMethod) == null) {
-      synchronized (passwordServiceGrpc.class) {
-        if ((getHashMethod = passwordServiceGrpc.getHashMethod) == null) {
-          passwordServiceGrpc.getHashMethod = getHashMethod =
-              io.grpc.MethodDescriptor.<ie.sean.password.PasswordService.Credentials, ie.sean.password.PasswordService.HashResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Credentials,
+      ie.sean.password.PasswordServiceOuterClass.HashResponse> getHashMethod() {
+    io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Credentials, ie.sean.password.PasswordServiceOuterClass.HashResponse> getHashMethod;
+    if ((getHashMethod = PasswordServiceGrpc.getHashMethod) == null) {
+      synchronized (PasswordServiceGrpc.class) {
+        if ((getHashMethod = PasswordServiceGrpc.getHashMethod) == null) {
+          PasswordServiceGrpc.getHashMethod = getHashMethod =
+              io.grpc.MethodDescriptor.<ie.sean.password.PasswordServiceOuterClass.Credentials, ie.sean.password.PasswordServiceOuterClass.HashResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "hash"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ie.sean.password.PasswordService.Credentials.getDefaultInstance()))
+                  ie.sean.password.PasswordServiceOuterClass.Credentials.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ie.sean.password.PasswordService.HashResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new passwordServiceMethodDescriptorSupplier("hash"))
+                  ie.sean.password.PasswordServiceOuterClass.HashResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PasswordServiceMethodDescriptorSupplier("hash"))
               .build();
         }
       }
@@ -58,30 +58,30 @@ public final class passwordServiceGrpc {
     return getHashMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Compare,
+  private static volatile io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Compare,
       com.google.protobuf.BoolValue> getValidateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "validate",
-      requestType = ie.sean.password.PasswordService.Compare.class,
+      requestType = ie.sean.password.PasswordServiceOuterClass.Compare.class,
       responseType = com.google.protobuf.BoolValue.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Compare,
+  public static io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Compare,
       com.google.protobuf.BoolValue> getValidateMethod() {
-    io.grpc.MethodDescriptor<ie.sean.password.PasswordService.Compare, com.google.protobuf.BoolValue> getValidateMethod;
-    if ((getValidateMethod = passwordServiceGrpc.getValidateMethod) == null) {
-      synchronized (passwordServiceGrpc.class) {
-        if ((getValidateMethod = passwordServiceGrpc.getValidateMethod) == null) {
-          passwordServiceGrpc.getValidateMethod = getValidateMethod =
-              io.grpc.MethodDescriptor.<ie.sean.password.PasswordService.Compare, com.google.protobuf.BoolValue>newBuilder()
+    io.grpc.MethodDescriptor<ie.sean.password.PasswordServiceOuterClass.Compare, com.google.protobuf.BoolValue> getValidateMethod;
+    if ((getValidateMethod = PasswordServiceGrpc.getValidateMethod) == null) {
+      synchronized (PasswordServiceGrpc.class) {
+        if ((getValidateMethod = PasswordServiceGrpc.getValidateMethod) == null) {
+          PasswordServiceGrpc.getValidateMethod = getValidateMethod =
+              io.grpc.MethodDescriptor.<ie.sean.password.PasswordServiceOuterClass.Compare, com.google.protobuf.BoolValue>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "validate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ie.sean.password.PasswordService.Compare.getDefaultInstance()))
+                  ie.sean.password.PasswordServiceOuterClass.Compare.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.BoolValue.getDefaultInstance()))
-              .setSchemaDescriptor(new passwordServiceMethodDescriptorSupplier("validate"))
+              .setSchemaDescriptor(new PasswordServiceMethodDescriptorSupplier("validate"))
               .build();
         }
       }
@@ -92,37 +92,37 @@ public final class passwordServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static passwordServiceStub newStub(io.grpc.Channel channel) {
-    return new passwordServiceStub(channel);
+  public static PasswordServiceStub newStub(io.grpc.Channel channel) {
+    return new PasswordServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static passwordServiceBlockingStub newBlockingStub(
+  public static PasswordServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new passwordServiceBlockingStub(channel);
+    return new PasswordServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static passwordServiceFutureStub newFutureStub(
+  public static PasswordServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new passwordServiceFutureStub(channel);
+    return new PasswordServiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class passwordServiceImplBase implements io.grpc.BindableService {
+  public static abstract class PasswordServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
      * Hash Method - Hashes salts password then returns it
      * </pre>
      */
-    public void hash(ie.sean.password.PasswordService.Credentials request,
-        io.grpc.stub.StreamObserver<ie.sean.password.PasswordService.HashResponse> responseObserver) {
+    public void hash(ie.sean.password.PasswordServiceOuterClass.Credentials request,
+        io.grpc.stub.StreamObserver<ie.sean.password.PasswordServiceOuterClass.HashResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getHashMethod(), responseObserver);
     }
 
@@ -131,7 +131,7 @@ public final class passwordServiceGrpc {
      * Validate method - Returns true if the passwords matches
      * </pre>
      */
-    public void validate(ie.sean.password.PasswordService.Compare request,
+    public void validate(ie.sean.password.PasswordServiceOuterClass.Compare request,
         io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
       asyncUnimplementedUnaryCall(getValidateMethod(), responseObserver);
     }
@@ -142,14 +142,14 @@ public final class passwordServiceGrpc {
             getHashMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                ie.sean.password.PasswordService.Credentials,
-                ie.sean.password.PasswordService.HashResponse>(
+                ie.sean.password.PasswordServiceOuterClass.Credentials,
+                ie.sean.password.PasswordServiceOuterClass.HashResponse>(
                   this, METHODID_HASH)))
           .addMethod(
             getValidateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                ie.sean.password.PasswordService.Compare,
+                ie.sean.password.PasswordServiceOuterClass.Compare,
                 com.google.protobuf.BoolValue>(
                   this, METHODID_VALIDATE)))
           .build();
@@ -158,20 +158,20 @@ public final class passwordServiceGrpc {
 
   /**
    */
-  public static final class passwordServiceStub extends io.grpc.stub.AbstractStub<passwordServiceStub> {
-    private passwordServiceStub(io.grpc.Channel channel) {
+  public static final class PasswordServiceStub extends io.grpc.stub.AbstractStub<PasswordServiceStub> {
+    private PasswordServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private passwordServiceStub(io.grpc.Channel channel,
+    private PasswordServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected passwordServiceStub build(io.grpc.Channel channel,
+    protected PasswordServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new passwordServiceStub(channel, callOptions);
+      return new PasswordServiceStub(channel, callOptions);
     }
 
     /**
@@ -179,8 +179,8 @@ public final class passwordServiceGrpc {
      * Hash Method - Hashes salts password then returns it
      * </pre>
      */
-    public void hash(ie.sean.password.PasswordService.Credentials request,
-        io.grpc.stub.StreamObserver<ie.sean.password.PasswordService.HashResponse> responseObserver) {
+    public void hash(ie.sean.password.PasswordServiceOuterClass.Credentials request,
+        io.grpc.stub.StreamObserver<ie.sean.password.PasswordServiceOuterClass.HashResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getHashMethod(), getCallOptions()), request, responseObserver);
     }
@@ -190,7 +190,7 @@ public final class passwordServiceGrpc {
      * Validate method - Returns true if the passwords matches
      * </pre>
      */
-    public void validate(ie.sean.password.PasswordService.Compare request,
+    public void validate(ie.sean.password.PasswordServiceOuterClass.Compare request,
         io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getValidateMethod(), getCallOptions()), request, responseObserver);
@@ -199,20 +199,20 @@ public final class passwordServiceGrpc {
 
   /**
    */
-  public static final class passwordServiceBlockingStub extends io.grpc.stub.AbstractStub<passwordServiceBlockingStub> {
-    private passwordServiceBlockingStub(io.grpc.Channel channel) {
+  public static final class PasswordServiceBlockingStub extends io.grpc.stub.AbstractStub<PasswordServiceBlockingStub> {
+    private PasswordServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private passwordServiceBlockingStub(io.grpc.Channel channel,
+    private PasswordServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected passwordServiceBlockingStub build(io.grpc.Channel channel,
+    protected PasswordServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new passwordServiceBlockingStub(channel, callOptions);
+      return new PasswordServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -220,7 +220,7 @@ public final class passwordServiceGrpc {
      * Hash Method - Hashes salts password then returns it
      * </pre>
      */
-    public ie.sean.password.PasswordService.HashResponse hash(ie.sean.password.PasswordService.Credentials request) {
+    public ie.sean.password.PasswordServiceOuterClass.HashResponse hash(ie.sean.password.PasswordServiceOuterClass.Credentials request) {
       return blockingUnaryCall(
           getChannel(), getHashMethod(), getCallOptions(), request);
     }
@@ -230,7 +230,7 @@ public final class passwordServiceGrpc {
      * Validate method - Returns true if the passwords matches
      * </pre>
      */
-    public com.google.protobuf.BoolValue validate(ie.sean.password.PasswordService.Compare request) {
+    public com.google.protobuf.BoolValue validate(ie.sean.password.PasswordServiceOuterClass.Compare request) {
       return blockingUnaryCall(
           getChannel(), getValidateMethod(), getCallOptions(), request);
     }
@@ -238,20 +238,20 @@ public final class passwordServiceGrpc {
 
   /**
    */
-  public static final class passwordServiceFutureStub extends io.grpc.stub.AbstractStub<passwordServiceFutureStub> {
-    private passwordServiceFutureStub(io.grpc.Channel channel) {
+  public static final class PasswordServiceFutureStub extends io.grpc.stub.AbstractStub<PasswordServiceFutureStub> {
+    private PasswordServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private passwordServiceFutureStub(io.grpc.Channel channel,
+    private PasswordServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected passwordServiceFutureStub build(io.grpc.Channel channel,
+    protected PasswordServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new passwordServiceFutureStub(channel, callOptions);
+      return new PasswordServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -259,8 +259,8 @@ public final class passwordServiceGrpc {
      * Hash Method - Hashes salts password then returns it
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<ie.sean.password.PasswordService.HashResponse> hash(
-        ie.sean.password.PasswordService.Credentials request) {
+    public com.google.common.util.concurrent.ListenableFuture<ie.sean.password.PasswordServiceOuterClass.HashResponse> hash(
+        ie.sean.password.PasswordServiceOuterClass.Credentials request) {
       return futureUnaryCall(
           getChannel().newCall(getHashMethod(), getCallOptions()), request);
     }
@@ -271,7 +271,7 @@ public final class passwordServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.BoolValue> validate(
-        ie.sean.password.PasswordService.Compare request) {
+        ie.sean.password.PasswordServiceOuterClass.Compare request) {
       return futureUnaryCall(
           getChannel().newCall(getValidateMethod(), getCallOptions()), request);
     }
@@ -285,10 +285,10 @@ public final class passwordServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final passwordServiceImplBase serviceImpl;
+    private final PasswordServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(passwordServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(PasswordServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -298,11 +298,11 @@ public final class passwordServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_HASH:
-          serviceImpl.hash((ie.sean.password.PasswordService.Credentials) request,
-              (io.grpc.stub.StreamObserver<ie.sean.password.PasswordService.HashResponse>) responseObserver);
+          serviceImpl.hash((ie.sean.password.PasswordServiceOuterClass.Credentials) request,
+              (io.grpc.stub.StreamObserver<ie.sean.password.PasswordServiceOuterClass.HashResponse>) responseObserver);
           break;
         case METHODID_VALIDATE:
-          serviceImpl.validate((ie.sean.password.PasswordService.Compare) request,
+          serviceImpl.validate((ie.sean.password.PasswordServiceOuterClass.Compare) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue>) responseObserver);
           break;
         default:
@@ -321,32 +321,32 @@ public final class passwordServiceGrpc {
     }
   }
 
-  private static abstract class passwordServiceBaseDescriptorSupplier
+  private static abstract class PasswordServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    passwordServiceBaseDescriptorSupplier() {}
+    PasswordServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return ie.sean.password.PasswordService.getDescriptor();
+      return ie.sean.password.PasswordServiceOuterClass.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("passwordService");
+      return getFileDescriptor().findServiceByName("PasswordService");
     }
   }
 
-  private static final class passwordServiceFileDescriptorSupplier
-      extends passwordServiceBaseDescriptorSupplier {
-    passwordServiceFileDescriptorSupplier() {}
+  private static final class PasswordServiceFileDescriptorSupplier
+      extends PasswordServiceBaseDescriptorSupplier {
+    PasswordServiceFileDescriptorSupplier() {}
   }
 
-  private static final class passwordServiceMethodDescriptorSupplier
-      extends passwordServiceBaseDescriptorSupplier
+  private static final class PasswordServiceMethodDescriptorSupplier
+      extends PasswordServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    passwordServiceMethodDescriptorSupplier(String methodName) {
+    PasswordServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -361,11 +361,11 @@ public final class passwordServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (passwordServiceGrpc.class) {
+      synchronized (PasswordServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new passwordServiceFileDescriptorSupplier())
+              .setSchemaDescriptor(new PasswordServiceFileDescriptorSupplier())
               .addMethod(getHashMethod())
               .addMethod(getValidateMethod())
               .build();
