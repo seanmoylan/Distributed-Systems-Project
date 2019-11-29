@@ -12,6 +12,7 @@ public class UserDB {
     static {
         Users.put(1, new User(1, "Sean Moylan", "seanmoylan1@icloud.com", "password"));
         Users.put(2, new User(2, "Conor Moylan", "conormoylan1@icloud.com", "password2"));
+
     }
 
     public static List<User> getUsers(){

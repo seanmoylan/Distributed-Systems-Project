@@ -23,7 +23,7 @@ import static javax.ws.rs.core.Response.Status.NO_CONTENT;
 @Path("/users")
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public class UsersRESTController {
-    //private static  Logger logger = Logger.getLogger(Client.class.getName());
+    private static  Logger logger = Logger.getLogger(Client.class.getName());
 
     private final Validator validator;
     private Client client;
@@ -72,9 +72,9 @@ public class UsersRESTController {
             return Response.status(Response.Status.BAD_REQUEST).entity(validationMessages).build();
         }
         if (u == null) {
-            client.Hash(user);
             //UserDB.createUser(user.getUser_id(), user);
-
+            client.Hash(user);
+            logger.info("USER: hashedPassword =  " + user.getHashed_password()+" Password = " + user.getPassword());
             return Response.created(new URI("/users/" + user.getUser_id()))
                     .build();
         } else
@@ -96,8 +96,8 @@ public class UsersRESTController {
             return Response.status(Response.Status.BAD_REQUEST).entity(validationMessages).build();
         }
         if (e != null) {
-            UserDB.updateUser(id, user);
             client.Hash(user);
+
             return Response.ok(user).build();
         } else
             return Response.status(NOT_FOUND).entity("Could not update user of id "+id+", user not found!").build();
